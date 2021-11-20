@@ -1,0 +1,34 @@
+version: '3'
+services:
+    broker:
+        build: broker
+        network_mode: host
+
+    auldfellas:
+        build: auldfellas
+        network_mode: host
+        depends_on:           #Makes the Broker module come up first
+            - broker
+
+    dodgydrivers:
+        build: dodgydrivers
+        network_mode: host
+        depends_on:           #Makes the Broker module come up first
+            - broker
+
+    girlpower:
+        build: girlpower
+        network_mode: host
+        depends_on:           #Makes the Broker module come up first
+            - broker
+
+    client:
+        build: client
+        environment:
+            SERVER_HOST: broker
+        network_mode: host
+        depends_on:           #To make Client start at the very last
+            - broker
+            - auldfellas
+            - girlpower
+            - dodgydrivers

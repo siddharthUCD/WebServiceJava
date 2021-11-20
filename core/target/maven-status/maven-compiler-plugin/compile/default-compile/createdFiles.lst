@@ -1,0 +1,4 @@
+service\core\AbstractQuotationService.class
+service\core\Quotation.class
+service\core\Constants.class
+service\core\ClientInfo.class

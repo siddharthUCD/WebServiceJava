@@ -1,0 +1,3 @@
+service\core\Broker$WSDLServiceListener.class
+service\core\Broker.class
+service\core\BrokerService.class
